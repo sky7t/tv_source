@@ -3,7 +3,9 @@ echo "HELLO WORLD"
 
 echo ">>> Starting custom entrypoint..."
 
-echo ">>> Current directory: $(pwd)"
+echo ">>> Current directory: $(pwd)" 
+
+jiotv_go serve --port 5001 --public > /dev/null 2>&1 &
 
 cd app/zee
 
