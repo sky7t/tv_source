@@ -5,7 +5,10 @@ FROM php:8.2-cli-alpine
 RUN apk add --no-cache git unzip curl bash
 
 # Clone your IPTV repo
-RUN apk add --no-cache curl bash && curl -fsSL https://jiotv_go.rabil.me/install.sh | bash
+RUN apk add --no-cache curl bash
+RUN curl -fsSL https://jiotv_go.rabil.me/install.sh -o install.sh
+RUN bash install.sh
+
 
 RUN git clone https://github.com/yuvraj824/zee5 /app/zee
 
