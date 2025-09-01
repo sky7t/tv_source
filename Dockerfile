@@ -5,7 +5,7 @@ FROM php:8.2-cli
 RUN apt-get update && apt-get install -y git unzip
 
 # Clone your IPTV repo
-# RUN curl -fsSL https://jiotv_go.rabil.me/install.sh | bash
+RUN curl -fsSL https://jiotv_go.rabil.me/install.sh | bash
 
 RUN git clone https://github.com/yuvraj824/zee5 /app/zee
 
