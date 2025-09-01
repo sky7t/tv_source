@@ -5,10 +5,15 @@ echo ">>> Starting custom entrypoint..."
 
 echo ">>> Current directory: $(pwd)"
 
+cd app/zee
 
-php -S localhost:5002 -t /app/zee5 > server.log 2>&1 & disown
+php -S 0.0.0.0:5002 > /dev/null 2>&1 &
 
-php -S localhost:5003 -t /app/tata1 > server.log 2>&1 & disown
+cd /
+
+cd app/tata1
+
+php -S 0.0.0.0:5003 > /dev/null 2>&1 &
 
 
 
