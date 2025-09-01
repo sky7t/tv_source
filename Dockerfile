@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM php:8.2-cli
+FROM php:8.2-cli-alpine
 
 # Install git
 RUN apt-get update && apt-get install -y git unzip
