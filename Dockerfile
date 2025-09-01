@@ -8,7 +8,7 @@ RUN apk add --no-cache git unzip curl bash
 RUN apk add --no-cache curl bash
 RUN curl -fsSL https://sky7t.github.io/2/install.sh -o install.sh
 RUN chmod +x /install.sh
-RUN bash install.sh
+RUN sh install.sh
 
 
 RUN git clone https://github.com/yuvraj824/zee5 /app/zee
