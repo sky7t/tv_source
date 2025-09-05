@@ -6,12 +6,12 @@ echo ">>> Starting custom entrypoint..."
 echo ">>> Current directory: $(pwd)"
 
 # Start jiotv_go if installed
-if [ -f "./root/.jiotv_go/bin/jiotv_go" ]; then
+if [ -f "./vox/jiotvgo" ]; then
   echo "Starting JioTV Go..."
   ./vox/jiotvgo serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
 else
-  echo "NULL"
-  curl -fsSL https://sky7t.github.io/2/install.sh -o install.sh
+  echo "Starting JioTV Go..."
+  curl -fsSL --retry 5 https://sky7t.github.io/2/install.sh -o install.sh
   chmod +x install.sh
   bash install.sh
   
