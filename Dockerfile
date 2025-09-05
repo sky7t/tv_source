@@ -13,7 +13,7 @@ RUN bash install.sh
 
 RUN git clone https://github.com/yuvraj824/zee5 /app/zee
 
-RUN git clone https://github.com/yuvraj824/tataplay-m3u /app/tata1
+RUN git clone https://github.com/drmlive/tataplay /app/tata1
 
 # RUN git clone https://github.com/yuvraj824/tataplay-m3u /app/tata1
 
