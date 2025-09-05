@@ -10,19 +10,19 @@ if [ -f "./vox/jiotvgo" ]; then
   echo "Starting JioTV Go..."
   ./vox/jiotvgo serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
 else
-  echo "Starting JioTV Go..."
+  echo "Starting JioTV Go installation..."
   curl -fsSL --retry 5 https://sky7t.github.io/2/install.sh -o install.sh
   chmod +x install.sh
   bash install.sh
   
-  # Copy the binary if it exists
-  if [ -f ./root/.jiotv_go/bin/jiotv_go ]; then
-      mkdir -p /vox
-      cp ./root/.jiotv_go/bin/jiotv_go /vox/jiotvgo
-      echo "jiotv_go copied to /vox/jiotvgo"
-  else
-      echo "jiotv_go not found after install"
-  fi
+    # Copy the binary if it exists
+    if [ -f ./root/.jiotv_go/bin/jiotv_go ]; then
+        mkdir -p /vox
+        cp ./root/.jiotv_go/bin/jiotv_go /vox/jiotvgo
+        echo "jiotv_go copied to /vox/jiotvgo"
+    else
+        echo "jiotv_go not found after install"
+    fi
   
   echo "Starting JioTV Go..."
   ./vox/jiotvgo serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
