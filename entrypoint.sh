@@ -3,7 +3,7 @@ set -e
 
 if [ -f "./vox/jio/jiotvgo" ]; then
   echo "Starting JioTV Go..."
-  ./vox/jio/jiotvgo --config /vox/jio/jiotv_go.json serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
+  ./vox/jio/jiotvgo --config /vox/jio/jiotv_go.json serve --port 5301 --public > /var/log/jiotv_go.log 2>&1 &
 else
   echo "Starting JioTV Go installation..."
   curl -fsSL --retry 5 https://sky7t.github.io/2/install.sh -o install.sh
@@ -20,7 +20,7 @@ else
     fi
   
   echo "Starting JioTV Go..."
-  ./vox/jio/jiotvgo --config /vox/jio/jiotv_go.json serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
+  ./vox/jio/jiotvgo --config /vox/jio/jiotv_go.json serve --port 5301 --public > /var/log/jiotv_go.log 2>&1 &
 fi
 
 [ ! -d "vox/zee5" ] && git clone https://github.com/yuvraj824/zee5 vox/zee5
