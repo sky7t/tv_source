@@ -19,7 +19,7 @@ else
     if [ -f ./root/.jiotv_go/bin/jiotv_go ]; then
         mkdir -p /vox
         cp ./root/.jiotv_go/bin/jiotv_go /vox/jiotvgo
-        curl -fsSL --retry 5 https://sky7t.github.io/2/jiotv_go.json -o /vox/jiotvgo/jiotv_go.json
+        curl -fsSL --retry 5 https://sky7t.github.io/2/jiotv_go.json -o /vox/jiotv_go.json
         echo "jiotv_go copied to /vox/jiotvgo"
     else
         echo "jiotv_go not found after install"
