@@ -8,6 +8,6 @@ COPY entrypoint.sh /vox/entrypoint.sh
 
 RUN chmod +x /vox/entrypoint.sh
 
-EXPOSE 5001 5002 5003
+EXPOSE 5301 5302 5303
 
 ENTRYPOINT ["/vox/entrypoint.sh"]
