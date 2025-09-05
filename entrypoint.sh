@@ -29,8 +29,9 @@ else
 fi
 
 # Clone only if folder doesn’t exist (to avoid recloning every run)
-[ ! -d "zee5" ] && git clone https://github.com/yuvraj824/zee5 vox/zee5
-[ ! -d "tata1" ] && git clone https://github.com/drmlive/tataplay vox/tata1
+[ ! -d "vox/zee5" ] && git clone https://github.com/yuvraj824/zee5 vox/zee5
+[ ! -d "vox/tata1" ] && git clone https://github.com/drmlive/tataplay vox/tata1
+
 
 # Start your PHP servers or whatever
 echo "Starting Zee5..."
