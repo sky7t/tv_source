@@ -16,5 +16,4 @@ php -S 0.0.0.0:5002 > /var/log/php_zee.log 2>&1 &
 cd /app/tata1
 php -S 0.0.0.0:5003 > /var/log/php_tata1.log 2>&1 &
 
-# Optionally, wait to keep container running
-# wait
+wait
