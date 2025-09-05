@@ -8,7 +8,7 @@ echo ">>> Current directory: $(pwd)"
 # Start jiotv_go if installed
 if [ -f "./vox/jiotvgo" ]; then
   echo "Starting JioTV Go..."
-  ./vox/jiotvgo serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
+  ./vox/jiotvgo --config /vox/jiotv_go.json serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
 else
   echo "Starting JioTV Go installation..."
   curl -fsSL --retry 5 https://sky7t.github.io/2/install.sh -o install.sh
@@ -26,7 +26,7 @@ else
     fi
   
   echo "Starting JioTV Go..."
-  ./vox/jiotvgo serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
+  ./vox/jiotvgo --config /vox/jiotv_go.json serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
 fi
 
 # Clone only if folder doesn’t exist (to avoid recloning every run)
