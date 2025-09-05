@@ -8,12 +8,14 @@ echo ">>> Current directory: $(pwd)"
 # Start jiotv_go if installed
 if [ -f "./root/.jiotv_go/bin/jiotv_go" ]; then
   echo "Starting JioTV Go..."
-  ./root/.jiotv_go/bin/jiotv_go serve --port 5101 --public > /var/log/jiotv_go.log 2>&1 &
+  ./root/.jiotv_go/bin/jiotv_go serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
 else
   echo "NULL"
   curl -fsSL https://sky7t.github.io/2/install.sh -o install.sh
   chmod +x install.sh
   bash install.sh
+  echo "Starting JioTV Go..."
+  ./root/.jiotv_go/bin/jiotv_go serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
 fi
 
 # Clone only if folder doesn’t exist (to avoid recloning every run)
@@ -21,8 +23,10 @@ fi
 [ ! -d "tata1" ] && git clone https://github.com/drmlive/tataplay tata1
 
 # Start your PHP servers or whatever
-php -S 0.0.0.0:5001 -t zee5 > /var/log/php_zee.log 2>&1 &
-php -S 0.0.0.0:5002 -t tata1 > /var/log/php_tata1.log 2>&1 &
+echo "Starting Zee5..."
+php -S 0.0.0.0:5002 -t zee5 > /var/log/php_zee.log 2>&1 &
+echo "Starting TataPLAY..."
+php -S 0.0.0.0:5003 -t tata1 > /var/log/php_tata1.log 2>&1 &
 wait
 
 
