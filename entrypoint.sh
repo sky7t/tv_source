@@ -6,9 +6,9 @@ echo ">>> Starting custom entrypoint..."
 echo ">>> Current directory: $(pwd)"
 
 # Start jiotv_go if installed
-if [ -f "./vox/jiotvgo" ]; then
+if [ -f "./vox/jio/jiotvgo" ]; then
   echo "Starting JioTV Go..."
-  ./vox/jiotvgo --config /vox/jiotv_go.json serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
+  ./vox/jio/jiotvgo --config /vox/jio/jiotv_go.json serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
 else
   echo "Starting JioTV Go installation..."
   curl -fsSL --retry 5 https://sky7t.github.io/2/install.sh -o install.sh
@@ -17,16 +17,16 @@ else
   
     # Copy the binary if it exists
     if [ -f ./root/.jiotv_go/bin/jiotv_go ]; then
-        mkdir -p /vox
-        cp ./root/.jiotv_go/bin/jiotv_go /vox/jiotvgo
-        curl -fsSL --retry 5 https://sky7t.github.io/2/jiotv_go.json -o /vox/jiotv_go.json
+        mkdir -p /vox/jio
+        cp ./root/.jiotv_go/bin/jiotv_go /vox/jio/jiotvgo
+        curl -fsSL --retry 5 https://sky7t.github.io/2/jiotv_go.json -o /vox/jio/jiotv_go.json
         echo "jiotv_go copied to /vox/jiotvgo"
     else
         echo "jiotv_go not found after install"
     fi
   
   echo "Starting JioTV Go..."
-  ./vox/jiotvgo --config /vox/jiotv_go.json serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
+  ./vox/jio/jiotvgo --config /vox/jio/jiotv_go.json serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
 fi
 
 # Clone only if folder doesn’t exist (to avoid recloning every run)
