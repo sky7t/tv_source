@@ -2,4 +2,4 @@
 
 Usage:
 
-`docker run -p 5001:5001 -p 5002:5002 -p 5003:5003 -v vox:/vox ghcr.io/sky7t/tv_source:latest`
+`docker run -p 5301:5301 -p 5302:5302 -p 5303:5303 -v vox:/vox ghcr.io/sky7t/tv_source:latest`
