@@ -6,7 +6,7 @@ echo ">>> Starting custom entrypoint..."
 echo ">>> Current directory: $(pwd)"
 
 # Start jiotv_go server in background, log output to a file for debug
-jiotv_go serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
+./root/.jiotv_go/bin/jiotv_go serve --port 5001 --public > /var/log/jiotv_go.log 2>&1 &
 
 # Start php web server for zee app
 cd /app/zee
